@@ -1,0 +1,32 @@
+/* ============================================= */
+/*              Buttons                          */
+/* ============================================= */
+
+.btn {
+    margin-top: 15px;
+    width: 100%;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    text-transform: uppercase;
+    border-radius: 5px;
+  }
+
+$button-style: (
+  "default": $def,
+  "error": $error,
+  "info": $info,
+  "succes": $succes,
+  "warning": $warning,
+);
+
+@each $button, $color in $button-style {
+  .#{$button} {
+    background-color: $color;
+    transition: .4s background-color ease-in;
+  }
+  .#{$button}:hover {
+    background-color: lighten($color, 15%);
+  }
+}
+
